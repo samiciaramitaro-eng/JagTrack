@@ -1,18 +1,21 @@
 {
   "name": "jagtrack",
   "version": "1.0.0",
-"description": "This is a website made to help Jefferson Academy students organize their classes",
-"main": "index.html",
-"scripts": {
- "lite": "lite-server",
- "start": "npm run lite",
- "test": "echo \"Error: no test specified\" && exit 1"
-},
-
+  "description": "This is a website made to help Jefferson Academy students organize their classes",
+  "main": "index.html",
+  "scripts": {
+    "lite": "lite-server",
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "vite": "^7.2.6"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
