@@ -6,6 +6,15 @@ I chose the dark color theme since it matches what theme I chose for
 my browser and my whole computer entirely. I never really liked the light
 theme or and colorful ones. The only other one I would consider would be
 teal. Dark theme is simple and it makes everything way more readable.
+
+I created a new calendar to help me stay organized by being able to see 
+what will be due or assigned at a larger scale than canvas and also not
+have to go on the website so much. So when choosing to go to one of my 
+classes I can also see the calendar being more efficient. There weren't 
+any challenges that I encountered it seemed fairly easy. I didn't 
+cusotmize the appearance because it being white matches my themes. Month 
+view seems to work the best. I might add a calendar for workouts and maybe
+one for events.
 <!DOCTYPE html>
 <html lang="en">
 
