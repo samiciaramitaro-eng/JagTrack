@@ -21,11 +21,11 @@ html
 
 
 <body>
-
+<script src="js/theme-toggle.js"></script>
 <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
   <div class="container">
       <a class="navbar-brand" href="index.html">
-          <img src="img/ja-initials-bLCg4zbA.svg" height="30" width="30" alt="JA Logo" />
+           <img src="img/ja-initials.svg" height="30" width="30" alt="JA Logo" />
           JagTrack
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#jagtrackNavbar">
@@ -156,35 +156,3 @@ AP class.</p>
 
 
 </html>
-```
-
-
-**Step 3: View your new page**
-* Run `npm start` (if not already running)
-* In your browser's address bar, go to: `http://localhost:3000/myclassesnextquarter.html`
-* You should see your new page (though it needs formatting work)
-
-
----
-
-
-### Task 2: Add Bootstrap Grid Formatting
-
-
-Now you'll apply Bootstrap's grid classes to make your page responsive.
-
-
-#### Format the Planning Section
-
-
-Find the "Planning Section" comment in your HTML. Replace that entire div section with:
-
-
-```html
-<!-- Planning Section -->
-<div class="row row-content">
-   <div class="col-12 col-sm-6">
-       <h3>Planning Ahead</h3>
-       <p>Use this page to plan and organize your classes for next quarter. While you won't have Canvas links yet (since the quarter hasn't started), you can prepare your schedule, know your class times, and get organized for a successful quarter. Go Jaguars!</p>
-   </div>
-</div>

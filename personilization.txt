@@ -18,6 +18,51 @@ one for events.
 <!DOCTYPE html>
 <html lang="en">
 
+My color theme that I had chosen was a dark red to bright red and white theme, because these are my favorite shades of red. I chose 
+blood red and black and white for my dark theme because it gave the same vibe I got from my vs studio which had the same theme. It reminds 
+me of the colors I have set as my windows theme also. The color choices reflect my style by the avatars I use and the calm demeanor they eminate.
+I didn't use any color theory principles.The contrast worked properly with both the white text and the shades of red being very contrasted with
+each other. I ensured good contrast by selecting the text color that appeared the most. I used no tools to pick these colors. Colors that didn't 
+work were just red dark red and black, it obviously didn't appeal enough to the eye so.
+I perfer a sunset theme to dark red theme. I always use dark mode rarely light mode so it is very helpful at night when you don't want to blind
+yourself. I did not create any custom css for the button toggle.
+Java script is what makes the webpage accesible, not the information, or the style of the website, but javascript creates the toggles, and 
+everything that would require actual actions from a computer. ocalStorage is a web storage API in browsers that lets JavaScript store key-value
+ pairs of data persistently on the user's device. When I click the theme toggle button it goes in either dark mode or light mode. The perference
+ persists because of the local storage. I will use javascript to make toggle and navigation tools. 
+
+
+
+Bootstrap Components Used:
+
+Jumbotron – Used to create a hero section that highlights the student’s name and profile image at the top of the webpage.
+
+Grid System (Container, Row, Columns) – Used to organize content and ensure the layout is responsive across different screen sizes.
+
+Cards – Used to present hobbies, interests, and academic goals in a clear and structured format.
+
+Accordion – Used in the Favorite Classes section to allow users to expand and collapse information for each class.
+
+Progress Bars – Used to visually represent skill levels in an easy-to-understand way.
+
+List Group – Used to display fun facts in a clean and organized list.
+
+I chose specific Bootstrap components like cards, accordions, and progress bars because they organize information clearly and make the page
+ easy to read. The layout starts with a hero section to grab attention and then moves into sections that gradually give more detail about me,
+  which felt logical and clean. I used Bootstrap’s grid system to keep everything aligned and consistent across the page. One challenge I 
+  faced was making sure the dark color theme still had good contrast, especially with text and cards. I am most proud of how the black, gold,
+   and white theme makes the page look polished and professional while still being simple. This page reflects my personality because it is 
+   organized, bold, and focused without being cluttered. If I had more time, I would add animations or a navigation bar for smoother 
+   interaction. I ensured the page was responsive by using Bootstrap containers, rows, and columns so the layout adapts to different screen
+    sizes.
+
+Research and Problem-Solving
+
+I used the Bootstrap documentation and W3Schools to learn how different components work and how to customize them. The hardest part was
+ figuring out how to style Bootstrap components without breaking their default behavior. I had to troubleshoot issues with spacing and colors
+  by inspecting elements and adjusting my CSS. Through this process, I learned how to research component options and apply them correctly 
+  instead of guessing. My confidence with Bootstrap has grown from Module 1 to Module 2 because I now understand how to structure pages and 
+  customize components more effectively.
 
 <head>
    <!-- Required meta tags always come first -->

@@ -1,0 +1,338 @@
+/* ===== CSS VARIABLES FOR LIGHT MODE (DEFAULT) ===== */
+
+
+:root {
+ /* Primary Brand Colors */
+ --jag-black: #000000;
+ --jag-gold: #b30000;
+ --jag-accent: #610000;
+
+
+ /* Text Colors */
+ --text-dark: #aaaaaa;
+ --text-light: #aaaaaa;
+ --text-muted: #aaaaaa;
+
+
+ /* Background Colors */
+ --background-light: #b30000;
+ --background-white: #e9ecef;
+ --background-dark: #610000;
+}
+
+
+/* ===== CSS VARIABLES FOR DARK MODE ===== */
+
+
+[data-theme="dark"] {
+ /* Primary Brand Colors */
+ --jag-black: #000000;
+ --jag-gold: #610000;
+ --jag-accent: #4d1e1e;
+
+
+ /* Text Colors */
+ --text-dark: #e9ecef;
+ --text-light: #e9ecef;
+ --text-muted: #e9ecef;
+
+
+ /* Background Colors */
+ --background-light: #610000;
+ --background-white: #320505;
+ --background-dark: #320505;
+}
+
+
+/* ===== BODY & GENERAL STYLES ===== */
+
+body {
+   font-family: 'Open Sans', sans-serif;
+   color: var(--text-dark);
+   background-color: var(--background-light);
+}
+
+/* ===== HEADER STYLES ===== */
+
+.jumbotron {
+   background: linear-gradient(135deg, var(--jag-black) 0%, #222222 100%);
+   color: var(--text-light);
+   margin-bottom: 30px;
+   padding: 60px 30px;
+}
+
+.jumbotron h1 {
+   font-size: 3rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.jumbotron h2 {
+   font-size: 1.5rem;
+   font-weight: 300;
+   color: var(--jag-gold);
+}
+
+/* ===== CLASS CARD STYLES ===== */
+
+.class-card {
+   background-color: var(--background-white);
+   border-left: 4px solid var(--jag-accent);
+   border-radius: 8px;
+   padding: 1.5rem;
+   margin-bottom: 1.5rem;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+}
+
+.class-card:hover {
+   border-left-color: var(--jag-black);
+   transform: translateY(-3px);
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.class-card h4 {
+   color: var(--jag-black);
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+}
+
+.class-card h5 {
+   color: var(--text-dark);
+   font-size: 1.25rem;
+   margin-bottom: 0.75rem;
+}
+
+.class-card p {
+   color: var(--text-muted);
+   margin-bottom: 0;
+}
+
+.class-card a {
+   color: var(--jag-black);
+   text-decoration: none;
+   font-weight: 600;
+}
+
+.class-card a:hover {
+   color: var(--jag-gold);
+   text-decoration: underline;
+}
+
+/* ===== CONTENT ROW SPACING ===== */
+
+.row-content {
+   padding: 50px 0;
+   border-bottom: 1px solid #e9ecef;
+}
+
+.row-content:last-child {
+   border-bottom: none;
+}
+
+/* ===== FOOTER STYLES ===== */
+
+footer {
+   background-color: var(--jag-black);
+   color: var(--text-light);
+   padding: 30px 0;
+   margin-top: 50px;
+}
+
+footer h5 {
+   color: var(--jag-gold);
+   font-weight: bold;
+   margin-bottom: 15px;
+}
+
+footer a {
+   color: var(--text-light);
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+footer a:hover {
+   color: var(--jag-gold);
+}
+
+footer ul {
+   padding-left: 0;
+}
+
+footer ul li {
+   list-style: none;
+   margin-bottom: 8px;
+}
+
+/* ===== TABS STYLES ===== */
+
+
+.nav-tabs {
+ border-bottom: 2px solid var(--jag-accent);
+ margin-bottom: 20px;
+}
+
+
+.nav-tabs .nav-link {
+ color: var(--text-dark);
+ border: none;
+ font-weight: 600;
+ padding: 10px 20px;
+ transition: all 0.3s ease;
+}
+
+
+.nav-tabs .nav-link:hover {
+ background-color: var(--background-light);
+ color: var(--jag-accent);
+}
+
+
+.nav-tabs .nav-link.active {
+ color: var(--jag-black);
+ background-color: var(--jag-gold);
+ border: none;
+ border-radius: 0;
+}
+
+
+.tab-content {
+ padding: 20px 0;
+}
+
+
+.tab-pane .class-card {
+ margin-bottom: 0;
+}
+#theme-toggle {
+ font-size: 1.5rem;
+ padding: 5px 10px;
+ margin-left: 10px;
+ border-radius: 50%;
+ transition: all 0.3s ease;
+}
+
+
+#theme-toggle:hover {
+ background-color: rgba(255, 255, 255, 0.1);
+ transform: scale(1.1);
+}
+/* =============================
+   Black • Gold • White Theme
+   ============================= */
+
+:root {
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gold: #d4af37;
+  --gold-dark: #b8962e;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--gold);
+}
+
+p {
+  color: #e6e6e6;
+}
+
+/* Hero Section */
+section.bg-dark {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+section.bg-dark h1 {
+  color: var(--gold);
+}
+
+section.bg-dark .lead {
+  color: var(--white);
+}
+
+/* Cards */
+.card {
+  background-color: #141414;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+}
+
+/* Light Sections Override */
+.bg-light {
+  background-color: #111111 !important;
+}
+
+/* Badges */
+.badge {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+/* Accordion */
+.accordion-item {
+  background-color: #141414;
+  border: 1px solid var(--gold);
+}
+
+.accordion-button {
+  background-color: #141414;
+  color: var(--gold);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.accordion-body {
+  color: var(--white);
+}
+
+/* Progress Bars */
+.progress {
+  background-color: #222;
+}
+
+.progress-bar {
+  background-color: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* List Group */
+.list-group-item {
+  background-color: #141414;
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+/* Images */
+img.rounded-circle {
+  border: 3px solid var(--gold);
+}
+
+/* Links (if added later) */
+a {
+  color: var(--gold);
+}
+
+a:hover {
+  color: var(--gold-dark);
+}
+
+/* Section Spacing Polish */
+section {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
