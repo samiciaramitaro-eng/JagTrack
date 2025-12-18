@@ -1,5 +1,5 @@
-import './css/styles.css'
-import { HfInference } from '@huggingface/inference'
+import './ai-chat.css';
+import { HfInference } from '@huggingface/inference';
 
 // ============================================
 // CONFIGURATION
@@ -31,9 +31,9 @@ function addMessage(content, isUser = false) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
   messageDiv.textContent = content;
-  
+
   chatDisplay.appendChild(messageDiv);
-  
+
   // Auto-scroll to the bottom
   chatDisplay.scrollTop = chatDisplay.scrollHeight;
 }
@@ -58,41 +58,41 @@ function showError(message) {
 async function getAIResponse(userMessage) {
   try {
     let fullResponse = '';
-    
-    // Use the Hugging Face library with streaming
-    const stream = hf.chatCompletionStream({
-      model: "Qwen/Qwen2.5-72B-Instruct",
-      
-      messages:[[
-     {
-       role: "system",
-        content: "You are a helpful homework assistant for high school students. Provide clear, educational explanations that help students learn. Keep responses concise and encouraging."
-     },
-     { role: "user", content: userMessage }
-   ],
-      ],
-      max_tokens: 250,
-      temperature: 0.7,
+
+    // Prepare the input prompt
+    const prompt = `
+You are a helpful homework assistant for high school students. 
+Provide clear, educational explanations that help students learn. 
+Keep responses concise and encouraging.
+
+User: ${userMessage}
+Assistant:
+`;
+
+    // Use textGenerationStream for Qwen Instruct model
+    const stream = hf.textGenerationStream({
+      model: 'Qwen/Qwen2.5-72B-Instruct',
+      inputs: prompt,
+      parameters: { max_new_tokens: 250, temperature: 0.7 }
     });
 
     // Collect the streamed response
     for await (const chunk of stream) {
-      if (chunk.choices && chunk.choices.length > 0) {
-        const newContent = chunk.choices[0].delta.content;
-        if (newContent) {
-          fullResponse += newContent;
-        }
+      if (chunk?.generated_text) {
+        fullResponse += chunk.generated_text;
       }
     }
 
     return fullResponse || 'No response generated.';
-    
+
   } catch (error) {
     console.error('Error calling AI API:', error);
-    
+
     // Provide helpful error messages
     if (error.message.includes('API key')) {
-      throw new Error('Invalid API key. Please check your .env file and make sure VITE_HF_API_KEY is set correctly.');
+      throw new Error(
+        'Invalid API key. Please check your .env file and make sure VITE_HF_API_KEY is set correctly.'
+      );
     } else if (error.message.includes('loading')) {
       throw new Error('Model is loading. Please wait a moment and try again.');
     } else {
@@ -104,38 +104,40 @@ async function getAIResponse(userMessage) {
 // Main function to handle sending messages
 async function handleSendMessage() {
   const message = userInput.value.trim();
-  
+
   // Don't send empty messages
   if (!message) return;
-  
+
   // Check if API key is set
   if (!API_KEY) {
-    showError('API key not found! Make sure you created a .env file with VITE_HF_API_KEY.');
+    showError(
+      'API key not found! Make sure you created a .env file with VITE_HF_API_KEY.'
+    );
     return;
   }
-  
+
   // Add user message to chat
   addMessage(message, true);
-  
+
   // Clear input
   userInput.value = '';
-  
+
   // Show loading state
   setLoading(true);
-  
+
   try {
     // Get AI response
     const aiResponse = await getAIResponse(message);
-    
+
     // Add AI response to chat
     addMessage(aiResponse, false);
-    
+
   } catch (error) {
     showError(error.message);
   } finally {
     // Hide loading state
     setLoading(false);
-    
+
     // Focus back on input
     userInput.focus();
   }
@@ -160,13 +162,18 @@ userInput.addEventListener('keydown', (event) => {
 userInput.focus();
 
 // Remove the welcome message when first message is sent
-chatDisplay.addEventListener('DOMNodeInserted', function() {
-  const welcomeMsg = chatDisplay.querySelector('.welcome-message');
-  const messages = chatDisplay.querySelectorAll('.message');
-  if (welcomeMsg && messages.length > 0) {
-    welcomeMsg.remove();
-  }
-}, { once: true });
+chatDisplay.addEventListener(
+  'DOMNodeInserted',
+  function () {
+    const welcomeMsg = chatDisplay.querySelector('.welcome-message');
+    const messages = chatDisplay.querySelectorAll('.message');
+    if (welcomeMsg && messages.length > 0) {
+      welcomeMsg.remove();
+    }
+  },
+  { once: true }
+);
+
 // Use template button click
 useTemplateButton.addEventListener('click', () => {
   userInput.value = promptTemplate.textContent;
